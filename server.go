@@ -3,8 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
-
-	"github.com/gin-gonic/gin"
+	//"github.com/gin-gonic/gin"
 )
 
 func get2(n string) []string {
@@ -16,9 +15,12 @@ func get2(n string) []string {
 	}
 	return init
 }
-func sayGreeting(n string) {
-	fmt.Printf("good morning %v \n", n)
+func Hello(name string) string {
+	message := fmt.Sprintf("hi iam  %v ", name)
+
+	return " "
 }
+
 func cycleNames(n []string, f func(string)) {
 	for _, value := range n {
 		f(value)
@@ -36,13 +38,20 @@ func sayFuck() {
 }
 
 func main() {
-	server := gin.Default()
-	server.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
-	server.Run()
+
+	x := 5
+	fmt.Println(&x)
+	y := &x
+	fmt.Println(&y)
+	fmt.Println(y)
+
+	// server := gin.Default()
+	// server.GET("/ping", func(c *gin.Context) {
+	// 	c.JSON(200, gin.H{
+	// 		"message": "pong",
+	// 	})
+	// })
+	// server.Run()
 }
 
 /*
